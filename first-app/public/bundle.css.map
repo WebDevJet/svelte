@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "..\\src\\App.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n\nimport ContactCard from \"./ContactCard.svelte\";\n\n\tlet name = 'Josh';\n\tlet age = 22;\n\n\t$: uppercaseName = name.toUpperCase();\n\n\t$: console.log(name);\n\n\t$: if (name === 'Joshua') {\n\t\tage = 30;\n\t}\n\n\n\tfunction incrementAge() {\n\t\tage += 1;\n\t}\n\n\tfunction changeName() {\n\t\tname = 'Joshua';\n\t}\n\nfunction nameInput (event) {\n\tconst enteredValue = event.target.value;\n\tname = enteredValue;\n}\n\n</script>\n\n<style>\n\th1 {\n\t\tcolor: purple;\n\t}\n</style>\n\n<h1>Hello {uppercaseName}, my age is {age}!</h1>\n<button on:click=\"{incrementAge}\">Change Age</button>\n<!-- <button on:click=\"{changeName}\">Change Name</button> -->\n<!-- <input type=\"text\" value=\"{name}\" on:input =\"{nameInput}\" /> -->\n<input type=\"text\" bind:value=\"{name}\" />\n\n<ContactCard />\n\n"
+  ],
+  "names": [],
+  "mappings": "AAgCC,EAAE,cAAC,CAAC,AACH,KAAK,CAAE,MAAM,AACd,CAAC"
+}
